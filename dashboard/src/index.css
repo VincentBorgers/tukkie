@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Bahnschrift", "Aptos", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(200, 104, 58, 0.24), transparent 26%),
+    radial-gradient(circle at 85% 15%, rgba(91, 114, 84, 0.18), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(20, 34, 46, 0.08), transparent 30%),
+    linear-gradient(135deg, #f7f0e5 0%, #eef2f1 46%, #dce6ee 100%);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: #14222e;
+  background: transparent;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(20, 34, 46, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 34, 46, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-panel border border-white/60 bg-white/60 p-6 shadow-panel backdrop-blur-xl;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-4 text-sm font-semibold text-white transition hover:bg-clay disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .soft-button {
+    @apply inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-sm text-ink transition hover:border-clay hover:text-clay disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .hero-shell {
+    @apply relative overflow-hidden rounded-[40px] border border-white/50 bg-white/60 px-6 py-8 shadow-panel backdrop-blur-xl md:px-8 md:py-10;
+  }
+
+  .hero-shell::after {
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(200, 104, 58, 0.22), transparent 68%);
+    content: "";
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    @apply grid gap-8 xl:grid-cols-[1.2fr_0.8fr] xl:items-end;
+  }
+
+  .status-pill {
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-[0.22em];
+  }
+
+  .status-pill--ok {
+    @apply border-moss/30 bg-moss/20 text-moss;
+  }
+
+  .status-pill--warn {
+    @apply border-clay/25 bg-clay/10 text-clay;
+  }
+
+  .voice-orb-shell {
+    @apply rounded-[28px] bg-ink px-5 py-6 text-white;
+  }
+
+  .voice-orb {
+    @apply mx-auto flex h-32 w-32 items-center justify-center rounded-full border border-white/20 bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20;
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.04), 0 18px 32px rgba(20, 34, 46, 0.22);
+  }
+
+  .voice-orb--recording {
+    animation: pulseOrb 1.3s ease-in-out infinite;
+    background: rgba(200, 104, 58, 0.88);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .voice-meter {
+    @apply mt-5 h-3 overflow-hidden rounded-full bg-white/10;
+  }
+
+  .voice-meter__fill {
+    @apply h-full rounded-full bg-clay transition-all;
+  }
+}
+
+@keyframes pulseOrb {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.04), 0 18px 32px rgba(20, 34, 46, 0.22);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.08), 0 26px 40px rgba(200, 104, 58, 0.26);
+  }
+}

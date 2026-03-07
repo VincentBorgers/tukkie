@@ -1,0 +1,28 @@
+assistant:
+  name: Tukkie
+  language: nl-NL
+  home_city: ""
+  personality:
+    style: proactief
+    privacy_mode: strict
+    autonomy_level: suggest_first
+  voice:
+    enabled: true
+    wake_word: tukkie
+    stt_provider: vosk
+    tts_provider: piper
+  safety:
+    require_confirmation_for:
+      - automation_create
+      - temperature_control
+      - scene_activate
+    deny_generated_code_execution: true
+  learning:
+    routine_threshold: 3
+    analysis_window_days: 14
+    suggestion_confidence_floor: 0.68
+
+storage:
+  database: sqlite
+  vector_store: chroma
+  local_only: true

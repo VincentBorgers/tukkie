@@ -1,0 +1,34 @@
+devices:
+  - id: livingroom-main-light
+    name: Woonkamer hoofdlicht
+    room: living-room
+    type: light
+    vendor: tuya
+    integration: tuya
+    status: configured
+    capabilities:
+      - power
+      - brightness
+    metadata:
+      device_key: ""
+      local_key: ""
+      address: Auto
+      version: 3.3
+      power_dps: "20"
+      brightness_dps: "22"
+
+  - id: front-door-ring
+    name: Voordeurbel
+    room: hallway
+    type: doorbell
+    vendor: ring
+    integration: ring
+    status: configured
+    capabilities:
+      - status
+      - battery
+    state:
+      last_ring: geen activiteit
+    metadata:
+      ring_name: Front Door
+

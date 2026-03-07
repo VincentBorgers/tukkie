@@ -1,0 +1,8 @@
+profile:
+  name: Household
+  preferred_language: nl-NL
+  timezone: UTC
+  preferences:
+    speaking_style: duidelijk
+    preferred_temperature_celsius: 21
+    notification_mode: proactief

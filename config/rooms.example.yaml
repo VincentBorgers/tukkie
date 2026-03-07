@@ -1,0 +1,12 @@
+rooms:
+  - id: living-room
+    name: Woonkamer
+    purpose: ontspanning
+    status: configured
+    metrics:
+      target_temperature: 21
+  - id: hallway
+    name: Hal
+    purpose: toegang
+    status: configured
+

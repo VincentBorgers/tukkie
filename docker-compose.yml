@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/app/config
+      - ./server:/app/server
+      - ./ai-core:/app/ai-core
+      - ./memory:/app/memory
+      - ./tools:/app/tools
+      - ./integrations:/app/integrations
+    depends_on:
+      - ollama
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    environment:
+      VITE_API_BASE_URL: http://server:8000
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./dashboard:/app/dashboard
+    depends_on:
+      - server
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+
+volumes:
+  ollama-data:
+

@@ -1,0 +1,17 @@
+automations:
+  - id: automation-evening-scene
+    name: Voorstel avondscène
+    description: Suggestieroutine voor het activeren van de avondscène.
+    enabled: false
+    confidence: 0.72
+    trigger:
+      type: schedule
+      at: "20:30"
+      days:
+        - vrijdag
+        - zaterdag
+    action:
+      type: scene_activate
+      scene_id: evening-scene
+    metadata:
+      source: example-config

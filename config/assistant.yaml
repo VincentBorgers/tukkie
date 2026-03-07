@@ -1,0 +1,17 @@
+assistant:
+  name: Tukkie
+  language: nl-NL
+  home_city: ""
+  privacy_mode: strict
+  autonomy_level: suggest_first
+  reasoning_style: proactief
+  voice:
+    enabled: true
+    wake_word: tukkie
+    stt_provider: vosk
+    tts_provider: piper
+
+storage:
+  database: sqlite
+  vector_store: chroma
+  local_only: true
