@@ -1,5 +1,9 @@
 # Tukkie
-
+<p align="center">
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/VincentBorgers/tukkie/16dd9989ce5d3cd82cf5e58b982a6a15616b47ce/banner-afbeelding" alt="Tukkie banner" width="100%" />
+</p>
+</p>
 Tukkie is een open-source, privacygerichte home intelligence stack voor Nederlandse huishoudens en makers. Het platform draait lokaal, gebruikt uitsluitend gecontroleerde tools voor acties, bewaart data op de eigen infrastructuur en is ontworpen om later door te groeien naar een VPS-deployment of bredere self-hosted omgeving.
 
 De repository bevat geen persoonlijke data, geen vooraf gevulde live device-configuratie en geen verplichte cloudafhankelijkheden. Runtimebestanden, databases, tokens, voice-modellen en lokale caches blijven buiten versiebeheer.
